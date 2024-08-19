@@ -1,0 +1,1 @@
+/Users/haru256/repo/github.com/haru-256/learning-rust-from-concept/workbench/ch04/types/target/debug/rct2: /Users/haru256/repo/github.com/haru-256/learning-rust-from-concept/workbench/ch04/types/src/bin/rct2.rs
