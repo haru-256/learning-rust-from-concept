@@ -1,0 +1,8 @@
+[package]
+name = "myfileio"
+version = "0.1.0"
+edition = "2021"
+# https://users.rust-lang.org/t/how-do-i-run-src-main-rs-by-default-with-cargo-run/99097
+default-run = "myfileio"
+
+[dependencies]
