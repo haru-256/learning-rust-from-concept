@@ -2,7 +2,7 @@ struct GenEx<T> {
     value: T,
 }
 
-impl<T> GenEx<T>e{
+impl<T> GenEx<T> {
     fn get_value(self) -> T {
         self.value
     }
