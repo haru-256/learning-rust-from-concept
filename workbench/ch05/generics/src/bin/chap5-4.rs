@@ -19,7 +19,7 @@ impl Point2d {
 }
 
 impl Add for Point2d {
-    type Output = Self;
+    type Output = Self; // Self is Point2d
 
     fn add(self, rhs: Self) -> <Self as Add>::Output {
         Self {
