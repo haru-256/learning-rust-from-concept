@@ -37,10 +37,6 @@ impl IAbs for i64 {
     type Output = u64;
 }
 
-fn print_abs<T: IAbs>(x: T) {
-    println!("Absolute value of {} is {}", x, x.iabs());
-}
-
 fn main() {
     let a = -10;
     println!("Absolute value of {} is {}", a, a.iabs());
