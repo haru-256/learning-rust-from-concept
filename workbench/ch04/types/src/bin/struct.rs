@@ -6,14 +6,17 @@ fn main() {
     }
 
     impl Person {
+        // associated function
         pub fn new(name: String, age: u8) -> Person {
             Person { name, age }
         }
 
+        // method
         pub fn age_incr(&self, incr: u8) -> u8 {
             self.age + incr
         }
 
+        // method
         pub fn age_incr_replace(&mut self, incr: u8) {
             self.age += incr;
         }
@@ -25,6 +28,14 @@ fn main() {
     };
     println!("{} is {} years old.", taro.name, taro.age);
     println!("{:?}", taro);
+
+    let mut taro = Person::new(String::from("Taro"), 20);
+    taro.age = 22;
+    println!("{} is {} years old.", taro.name, taro.age);
+
+    let taro = &mut Person::new(String::from("Taro"), 20);
+    taro.age = 21;
+    println!("{} is {} years old.", taro.name, taro.age);
 
     let name = String::from("Jiro");
     let age = 25;
@@ -48,17 +59,32 @@ fn main() {
 
     #[derive(Debug)]
     struct Parents<'a, 'b> {
-        father: &'a Person,
-        mother: &'b Person,
+        father: &'a mut Person,
+        mother: &'b mut Person,
     }
     impl<'a, 'b> Parents<'a, 'b> {
-        fn new(father: &'a Person, mother: &'b Person) -> Parents<'a, 'b> {
+        fn new(father: &'a mut Person, mother: &'b mut Person) -> Parents<'a, 'b> {
             Parents { father, mother }
+        }
+
+        pub fn age_incr(&self, incr: u8) -> u8 {
+            self.father.age + incr
+        }
+
+        pub fn age_incr_replace(&mut self, incr: u8) {
+            self.father.age += incr;
+            self.mother.age += incr;
         }
     }
 
-    let taro = Person::new(String::from("Taro"), 20);
-    let hanako = Person::new(String::from("Hanako"), 18);
-    let sato = Parents::new(&taro, &hanako);
+    let mut taro = Person::new(String::from("Taro"), 20);
+    let mut hanako = Person::new(String::from("Hanako"), 18);
+    let mut sato = Parents::new(&mut taro, &mut hanako);
     println!("{:?}", sato);
+    println!("{:?}", sato.father);
+    println!("{:?}", sato.mother);
+    sato.age_incr(5);
+    sato.age_incr_replace(5);
+    println!("{:?}", sato.father);
+    println!("{:?}", sato.mother);
 }

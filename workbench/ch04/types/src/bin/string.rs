@@ -6,6 +6,11 @@ fn main() {
     let st = "あいうえお";
     println!("{}", st);
     println!("{}", &st[0..6]);
+    let o = st.chars().nth(2);
+    match o {
+        Some(c) => println!("{}", c),
+        None => println!("None"),
+    }
 
     let mut st1 = "hello".to_string();
     let st2 = String::from("world");
@@ -13,4 +18,6 @@ fn main() {
     println!("{}", st1);
     println!("{}", st2);
     println!("{}", &st1[0..6]);
+    println!("{}", st2.chars().take(5).collect::<String>());
+    println!("{}", st2.chars().skip(1).take(5).collect::<String>());
 }
