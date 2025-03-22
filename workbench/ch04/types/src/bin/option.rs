@@ -25,4 +25,9 @@ fn main() {
         Some(z) => println!("{}", z),
         None => println!("error"),
     }
+
+    let z = func_ex_div_some(x, 1);
+    println!("{:?}", z.unwrap());
+    let z = func_ex_div_some(x, 0);
+    println!("{:?}", z.unwrap_or(-99999));
 }

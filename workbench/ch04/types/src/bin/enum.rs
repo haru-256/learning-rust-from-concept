@@ -3,7 +3,7 @@ use std::cmp::Ordering;
 fn main() {
     print_sign(determine_sign(10));
     print_sign(determine_sign(-1));
-    print_sign(determine_sign(0));
+    print_sign(determine_sign2(0));
 
     let mut v: Vec<EnumExample> = Vec::new();
     v.push(EnumExample::TupleTypeExample1(String::from(
