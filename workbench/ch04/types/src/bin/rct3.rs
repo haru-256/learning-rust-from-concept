@@ -1,5 +1,3 @@
-use std::rc::Rc;
-
 #[derive(Debug)]
 struct Node {
     data: i32,
@@ -36,7 +34,7 @@ fn main() {
     };
 
     node1.child = Some(Box::new(node3));
-    node2.child = Some(Box::new(node3));
+    node2.child = Some(Box::new(node3)); // NOTE: 1つの値に対して所有権を2つ持たせようとするとRcやRefCellを使う必要がある
 
     println!("link from node1");
     print_link(node1);

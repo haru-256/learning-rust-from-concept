@@ -38,7 +38,7 @@ fn main() {
     }));
 
     node1.borrow_mut().child = Some(Rc::clone(&node3));
-    node1.borrow_mut().child = Some(Rc::clone(&node3));
+    node2.borrow_mut().child = Some(Rc::clone(&node3));
 
     println!("link from node1");
     print_link(Rc::clone(&node1));

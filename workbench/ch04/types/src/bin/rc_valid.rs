@@ -33,4 +33,9 @@ fn main() {
         data_a2.number_a.unwrap(),
         data_b2.number_b.unwrap()
     );
+
+    // NOTE:borrow value from value inside Option
+    // https://willbaker.dev/posts/result-and-option/?utm_source=chatgpt.com
+    // let x = data_a2.number_a.as_ref().unwrap();
+    // let y = &data_a2.number_a.unwrap();
 }

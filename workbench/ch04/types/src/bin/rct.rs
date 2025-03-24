@@ -9,6 +9,7 @@ struct Node {
 fn print_link(start_node: Rc<Node>) {
     let mut current_node = start_node;
     loop {
+        // i32はCopyなので所有権を移動しても問題ない
         println!("{}", current_node.data);
         // match current_node.child {
         //     Some(ref next_node) => current_node = Rc::clone(next_node),

@@ -9,9 +9,9 @@ fn main() {
     let targets = vec!["Japan", "Korea", "UK", "US"];
 
     for tg in targets {
+        // keyが&strなのに&&strでなくても良いのはなぜ？
         // match capitals.get(tg) {
         match capitals.get(&tg) {
-            // keyが&strなのに&&str出なくても良いのはなぜ？
             Some(capital) => println!("The capital of {} is {}", tg, *capital),
             None => println!("{} not found", tg),
         }

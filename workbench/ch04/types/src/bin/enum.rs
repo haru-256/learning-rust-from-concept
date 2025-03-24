@@ -5,15 +5,23 @@ fn main() {
     print_sign(determine_sign(-1));
     print_sign(determine_sign2(0));
 
-    let mut v: Vec<EnumExample> = Vec::new();
-    v.push(EnumExample::TupleTypeExample1(String::from(
-        "TupleTypeExample1",
-    )));
-    v.push(EnumExample::TupleTypeExample2(1, true));
-    v.push(EnumExample::StructTypeExample {
-        name: String::from("StructTypeExample"),
-        age: 1,
-    });
+    let v: Vec<EnumExample> = vec![
+        EnumExample::TupleTypeExample1(String::from("TupleTypeExample1")),
+        EnumExample::TupleTypeExample2(1, true),
+        EnumExample::StructTypeExample {
+            name: String::from("StructTypeExample"),
+            age: 1,
+        },
+    ];
+    // let mut v: Vec<EnumExample> = Vec::new();
+    // v.push(EnumExample::TupleTypeExample1(String::from(
+    //     "TupleTypeExample1",
+    // )));
+    // v.push(EnumExample::TupleTypeExample2(1, true));
+    // v.push(EnumExample::StructTypeExample {
+    //     name: String::from("StructTypeExample"),
+    //     age: 1,
+    // });
 
     for e in &v {
         if let EnumExample::StructTypeExample { name: n, age: a } = e {
