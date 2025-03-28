@@ -9,14 +9,14 @@ trait IAbs {
     where
         Self:
             Sized + PartialOrd + Neg + From<i8> + TryInto<<Self as IAbs>::Output> + Debug + Display,
-        <Self as IAbs>::Output: TryFrom<<Self as Neg>::Output> + Debug + Display,
+        <Self as IAbs>::Output: TryFrom<<Self as Neg>::Output>, // + Debug + Display,
         <Self as TryInto<<Self as IAbs>::Output>>::Error: Debug,
         <<Self as IAbs>::Output as TryFrom<<Self as Neg>::Output>>::Error: Debug,
     {
         if self < (0_i8).into() {
-            self.try_into().unwrap()
-        } else {
             (-self).try_into().unwrap()
+        } else {
+            self.try_into().unwrap()
         }
     }
 }
