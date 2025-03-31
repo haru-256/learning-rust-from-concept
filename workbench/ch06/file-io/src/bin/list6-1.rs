@@ -1,5 +1,6 @@
 use std::fs::File;
-use std::io::Read;
+// use std::io::Read;
+use std::io::prelude::*; // こちらのほうが便利。ただし不要なものも入るため、ビルドサイズが大きくなる。
 
 const BUF_SIZE: usize = 1024;
 
