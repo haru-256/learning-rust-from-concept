@@ -6,3 +6,4 @@ edition = "2021"
 default-run = "myfileio"
 
 [dependencies]
+byteorder = "1"
